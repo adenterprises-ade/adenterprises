@@ -7,8 +7,6 @@
     <!-- Google Fonts & Font Awesome Icons -->
     <link href="https://googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="https://cloudflare.com">
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com" rel="stylesheet">
     
     <style>
         :root {
@@ -31,20 +29,22 @@
             background-color: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.6;
+            padding-top: 80px; /* Isse content navbar ke peeche nahi chupegaon */
         }
 
-        /* Navbar Style */
+        /* Fixed Navigation Header */
         .navbar {
             background: var(--white);
-            padding: 15px 5%;
+            padding: 10px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: fixed;
             width: 100%;
             top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            left: 0;
+            z-index: 9999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
         }
 
         .logo-area {
@@ -53,10 +53,10 @@
             gap: 12px;
         }
 
-        /* SVG Logo Styling */
+        /* Micro SVG Logo Box */
         .brand-logo-svg {
-            width: 55px; /* Logo Size Chota Kiya Gaya Hai */
-            height: 55px;
+            width: 50px; 
+            height: 50px;
             display: block;
         }
 
@@ -84,29 +84,28 @@
             color: var(--accent);
         }
 
-        /* Hero Banner Section */
+        /* Hero Splash Banner */
         .hero {
             background: linear-gradient(135px, rgba(15,23,42,0.95), rgba(37,99,235,0.85)), url('https://unsplash.com');
             background-size: cover;
             background-position: center;
-            height: 80vh;
+            min-height: 70vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: var(--white);
-            padding: 0 20px;
-            margin-top: 70px;
+            padding: 40px 20px;
         }
 
         .hero-content h1 {
-            font-size: 48px;
+            font-size: 45px;
             font-weight: 700;
             margin-bottom: 15px;
         }
 
         .hero-content p {
-            font-size: 20px;
+            font-size: 18px;
             margin-bottom: 30px;
             opacity: 0.9;
         }
@@ -127,33 +126,33 @@
 
         .btn-whatsapp:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37,211,102,0.4);
         }
 
-        /* Section Global Settings */
+        /* Content Sections Setup */
         section {
-            padding: 80px 8%;
+            padding: 70px 5%;
+            display: block; /* Force visibility rendering */
+            clear: both;
         }
 
         .section-title {
             text-align: center;
-            font-size: 32px;
+            font-size: 30px;
             margin-bottom: 40px;
-            position: relative;
             color: var(--primary);
         }
 
         .section-title::after {
             content: '';
             display: block;
-            width: 60px;
+            width: 50px;
             height: 4px;
             background: var(--accent);
             margin: 10px auto 0;
             border-radius: 2px;
         }
 
-        /* Services Cards Grid */
+        /* Services Grid Layout */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -164,27 +163,26 @@
             background: var(--white);
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
             transition: 0.3s;
         }
 
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
 
         .service-img {
             width: 100%;
-            height: 200px;
+            height: 180px;
             object-fit: cover;
         }
 
         .service-info {
-            padding: 25px;
+            padding: 20px;
         }
 
         .service-info h3 {
-            font-size: 20px;
+            font-size: 18px;
             margin-bottom: 12px;
             color: var(--primary);
             display: flex;
@@ -198,7 +196,7 @@
         }
 
         .service-info ul li {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             font-size: 14px;
         }
 
@@ -208,32 +206,31 @@
             font-weight: bold;
         }
 
-        /* Gallery Grid */
+        /* Gallery System Layout */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
         }
 
         .gallery-item {
             border-radius: 8px;
             overflow: hidden;
-            height: 220px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: 200px;
         }
 
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: 0.5s;
+            transition: 0.3s;
         }
 
         .gallery-item:hover img {
-            transform: scale(1.08);
+            transform: scale(1.05);
         }
 
-        /* Reviews Section */
+        /* Reviews Block Layout */
         .reviews-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -242,9 +239,9 @@
 
         .review-card {
             background: var(--white);
-            padding: 30px;
+            padding: 25px;
             border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
             border: 1px solid #edf2f7;
         }
 
@@ -257,87 +254,93 @@
             font-style: italic;
             color: var(--text-light);
             font-size: 14px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .reviewer-name {
             font-weight: 600;
-            font-size: 15px;
-            color: var(--primary);
+            font-size: 14px;
         }
 
-        /* Contact & Map Layout */
+        /* Connect Wrapper System */
         .contact-wrapper {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
         .contact-box {
             background: var(--white);
-            padding: 40px;
+            padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
         }
 
         .info-item {
             display: flex;
             align-items: flex-start;
             gap: 15px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .info-item i {
-            font-size: 20px;
             color: var(--accent);
-            margin-top: 5px;
-        }
-
-        .info-item p {
-            color: var(--text-light);
-            font-size: 15px;
+            font-size: 18px;
+            margin-top: 4px;
         }
 
         .map-box iframe {
             width: 100%;
             height: 100%;
-            min-height: 350px;
+            min-height: 300px;
             border-radius: 12px;
             border: none;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
         }
 
-        /* Footer Section */
         footer {
             background: var(--primary);
             color: var(--white);
             text-align: center;
-            padding: 30px;
-            font-size: 14px;
+            padding: 25px;
+            font-size: 13px;
         }
 
-        /* Responsive Design Rules */
         @media (max-width: 768px) {
-            .navbar { padding: 15px 20px; }
-            .nav-links { display: none; } /* Mobile me links clean display ke liye hide */
-            .hero-content h1 { font-size: 32px; }
-            .hero-content p { font-size: 16px; }
-            section { padding: 60px 20px; }
+            .nav-links { display: none; }
+            .hero-content h1 { font-size: 30px; }
+            body { padding-top: 70px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header / Navbar Section -->
+    <!-- Header Block Navigation -->
     <nav class="navbar">
         <div class="logo-area">
-            <!-- SVG Embedded Vector Logo Graphic -->
+            <!-- Precise Vector Brand Logo Alignment -->
             <svg class="brand-logo-svg" viewBox="0 0 500 500" xmlns="http://w3.org">
                 <circle cx="250" cy="250" r="230" fill="#000000"/>
-                <path d="M 120 250 C 120 180, 140 160, 200 160 C 230 160, 245 175, 245 200 C 245 220, 230 235, 190 240 C 150 245, 120 248, 120 250 Z" fill="none" stroke="#ffffff" stroke-width="4"/>
                 <circle cx="250" cy="250" r="170" fill="#ffffff"/>
                 <circle cx="250" cy="250" r="150" fill="#ffffff" stroke="#000000" stroke-width="8"/>
                 <text x="250" y="90" font-family="'Times New Roman', serif" font-size="52" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="3">ENTERPRISES</text>
                 <text x="120" y="300" font-family="'Times New Roman', serif" font-size="65" font-weight="bold" fill="#ffffff" text-anchor="middle" transform="rotate(-65, 120, 300)">AD</text>
                 <text x="250" y="260" font-family="'Georgia', serif" font-size="110" font-weight="bold" fill="#000000" text-anchor="middle">ADE</text>
-                <text x="250" y="390" font-family="'Brush Script MT', cursive, sans-serif" font-size="34" font-weight="bold" fill="#ffffff" text-anchor="middle">One Step</text>
+                <text x="250" y="390" font-family="'Brush Script MT', cursive" font-size="34" font-weight="bold" fill="#ffffff" text-anchor="middle">One Step</text>
+                <text x="250" y="425" font-family="'Brush Script MT', cursive" font-size="34" font-weight="bold" fill="#ffffff" text-anchor="middle">All Solutions</text>
+                <circle cx="65" cy="250" r="10" fill="#ffffff"/>
+                <circle cx="435" cy="250" r="10" fill="#ffffff"/>
+            </svg>
+            <span class="brand-name">AD ENTERPRISES</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Showcase Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>AD ENTERPRISES</h1>
