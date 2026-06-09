@@ -1,172 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AD ENTERPRISES</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AD ENTERPRISES | Multi-Service Hub Jaigaon</title>
+    <meta name="description" content="AD ENTERPRISES in Jaigaon, West Bengal offers professional Printing, Mobile Repairing, Electronics, Parcel Services, and Tour Packages. Contact us today!">
+    
+    <!-- Tailwind CSS for modern layout -->
+    <script src="https://jsdelivr.net"></script>
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f5f5f5;
-}
-
-/* HEADER */
-header {
-  background: url('images/header.jpg') center/cover no-repeat;
-  color: white;
-  text-align: center;
-  padding: 60px 20px;
-}
-
-header h1 {
-  font-size: 40px;
-  background: rgba(0,0,0,0.5);
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 10px;
-}
-
-/* SECTION */
-.section {
-  padding: 20px;
-  text-align: center;
-}
-
-.section h2 {
-  margin-bottom: 15px;
-}
-
-/* CARDS */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 15px;
-  padding: 10px;
-}
-
-.card {
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.card h3 {
-  margin: 10px 0;
-}
-
-.btn {
-  display: inline-block;
-  margin: 10px;
-  padding: 8px 12px;
-  background: green;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-}
-
-/* GALLERY */
-.gallery img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-/* REVIEWS */
-.review {
-  background: white;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-</style>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Premium Soft Animations */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
 </head>
+<body class="bg-gray-50 text-gray-800 antialiased">
 
-<body>
+    <!-- TOP CONTACT BAR -->
+    <div class="bg-blue-900 text-white text-xs sm:text-sm py-2 px-4 sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="tel:+917063680087" class="hover:text-blue-300 transition"><i class="fas fa-phone mr-1"></i> +91-7063680087</a>
+                <a href="tel:+97517343887" class="hover:text-blue-300 transition"><i class="fas fa-phone mr-1"></i> +975-17343887</a>
+                <a href="mailto:adenterprises206@gmail.com" class="hover:text-blue-300 transition"><i class="fas fa-envelope mr-1"></i> adenterprises206@gmail.com</a>
+            </div>
+            <div class="flex items-center gap-2">
+                <i class="fas fa-map-marker-alt text-red-400"></i>
+                <span>Jaigaon, West Bengal, 736182</span>
+            </div>
+        </div>
+    </div>
 
-<header>
-  <h1>AD ENTERPRISES</h1>
-</header>
+    <!-- HEADER / NAVIGATION -->
+    <header class="bg-white py-4 px-6 shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Brand Logo Frame -->
+            <div class="flex items-center gap-3">
+                <div class="bg-blue-600 text-white p-2.5 rounded-xl shadow-md font-bold text-xl tracking-wider">
+                    AD
+                </div>
+                <div>
+                    <h1 class="font-bold text-xl sm:text-2xl text-gray-900 tracking-tight">AD ENTERPRISES</h1>
+                    <p class="text-xs text-blue-600 font-medium tracking-widest uppercase">Multi Services Hub</p>
+                </div>
+            </div>
+            <!-- Quick WhatsApp Action Nav -->
+            <a href="https://wa.me." target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-sm transition flex items-center gap-2">
+                <i class="fab fa-whatsapp text-lg"></i>
+                <span class="hidden md:inline">Chat With Us</span>
+            </a>
+        </div>
+    </header>
 
-<!-- SERVICES -->
-<div class="section">
-<h2>Our Services</h2>
+    <!-- HERO BANNER SECTION -->
+    <section class="relative bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 text-white py-20 px-6 overflow-hidden">
+        <!-- Abstract Tech Background Overlay -->
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        
+        <div class="max-w-5xl mx-auto text-center relative z-10 fade-in-up">
+            <span class="bg-blue-500/20 text-blue-300 text-xs font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full border border-blue-400/30">Your Trusted Partner in Jaigaon</span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold mt-4 mb-6 leading-tight tracking-tight">
+                All Your Business & Personal <br class="hidden sm:inline"> Needs In One Premium Place
+            </h2>
+            <p class="text-lg text-blue-100 max-w-2xl mx-auto mb-8 font-light">
+                From high-end printing press setup and mobile repairs to modern electronics, secure parcel handling, and beautiful tour planning.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#services" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-3.5 rounded-xl transition shadow-lg shadow-blue-900/50 text-center">
+                    Explore Our Services
+                </a>
+                <a href="#contact" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-3.5 rounded-xl border border-white/20 transition text-center backdrop-blur-sm">
+                    Contact Office
+                </a>
+            </div>
+        </div>
+    </section>
 
-<div class="grid">
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+            <h2 class="text-2xl sm:text-4xl font-bold text-gray-900">Our Premium Services</h2>
+            <div class="h-1 w-20 bg-blue-600 mx-auto mt-3 rounded-full"></div>
+            <p class="text-gray-500 mt-4 max-w-lg mx-auto">We provide fast, reliable, and high-quality solutions designed around your exact daily operational needs.</p>
+        </div>
 
-  <!-- PRINTING / PAINTING -->
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600" alt="Printing Press">
-    <h3>Printing Press</h3>
-    <a class="btn" href="#">Inquiry</a>
-  </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Service 1: Printing Press -->
+            <div class="service-card bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden transition-all duration-300 flex flex-col">
+                <div class="h-48 bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center p-6 text-white relative">
+                    <i class="fas fa-print text-6xl opacity-20 absolute right-4 bottom-2"></i>
+                    <div class="text-center">
+                        <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mx-auto mb-3 backdrop-blur-sm">
+                            <i class="fas fa-print text-2xl text-white"></i>
+                        </div>
+                        <h3 class="font-bold text-xl">Printing / Painting Press</h3>
+                    </div>
+                </div>
+                <div class="p-6 flex-grow flex flex-col justify-between">
+                    <ul class="space-y-2.5 text-gray-600 text-sm mb-6">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i> High-Quality Banner Printing</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i> Premium Durable Flex Printing</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i> Professional Visiting Cards</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i> Custom Posters & Marketing Flyers</li>
+                    </ul>
+                    <a href="https://wa.me." target="_blank" class="w-full bg-gray-50 hover:bg-blue-50 text-blue-600 border border-gray-200 hover:border-blue-300 font-semibold py-2.5 rounded-xl transition text-center text-sm flex items-center justify-center gap-2">
+                        <i class="fab fa-whatsapp text-base"></i> Inquiry Now
+                    </a>
+                </div>
+            </div>
 
-  <!-- MOBILE (3rd image style) -->
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600" alt="Mobile">
-    <h3>Mobile Repair</h3>
-    <a class="btn" href="#">Inquiry</a>
-  </div>
-
-  <!-- ELECTRONICS (HEADPHONE) -->
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1518441902117-f0a4a3a8c6a3?w=600" alt="Headphones">
-    <h3>Electronics</h3>
-    <a class="btn" href="#">Inquiry</a>
-  </div>
-
-  <!-- PARCEL -->
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600" alt="Parcel Box">
-    <h3>Parcel Service</h3>
-    <a class="btn" href="#">Inquiry</a>
-  </div>
-
-</div>
-</div>
-
-<!-- GALLERY -->
-<div class="section">
-<h2>Gallery</h2>
-<div class="grid gallery">
-
-  <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600">
-  <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600">
-  <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600">
-
-</div>
-</div>
-
-<!-- REVIEWS -->
-<div class="section">
-<h2>Customer Reviews</h2>
-
-<div class="review">
-⭐⭐⭐⭐⭐ <br>
-Good service and fast delivery!
-</div>
-
-<div class="review">
-⭐⭐⭐⭐⭐ <br>
-Very nice printing quality.
-</div>
-
-<div class="review">
-⭐⭐⭐⭐ <br>
-Affordable and trusted shop.
-</div>
-
-</div>
-
-</body>
-</html>
+            <!-- Service 2: Mobile Repair -->
+            <div class="service-card bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden transition-all duration-300 flex flex-col">
+                <div class="h-48 bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center p-6 text-white relative">
+                    <i class="fas fa-mobile-alt text-6xl opacity-20 absolute right-4 bottom-2"></i>
+                    <div class="text-center">
+                        <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mx-auto mb-3 backdrop-blur-sm">
+                            <i class="fas fa-tools text-2xl text-white"></i>
+                        </div>
+                        <h3 class="font-bold text-xl">Mobile Repair</h3>
+                    </div>
+                </div>
+                <div class="p-6 flex-grow flex flex-col justify-between">
+                    <ul class="space-y-2.5 text-gray-600 text-sm mb-6">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i> Expert Mobile Repairing Specialist</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i> Fast Software & Hardware Fixes</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i> Genuine Mobile Parts Replacement</li>
+                    </ul>
