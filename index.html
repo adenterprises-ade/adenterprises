@@ -13,14 +13,19 @@
             --text-light: #64748b;
             --bg-light: #f8fafc;
             --white: #ffffff;
+            --card-1: linear-gradient(135px, #ff6b6b, #ff8e53);
+            --card-2: linear-gradient(135px, #4facfe, #00f2fe);
+            --card-3: linear-gradient(135px, #43e97b, #38f9d7);
+            --card-4: linear-gradient(135px, #fa709a, #fee140);
+            --card-5: linear-gradient(135px, #667eea, #764ba2);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         body { background-color: var(--bg-light); color: var(--text-dark); padding-top: 70px; }
         
-        /* Navbar Section */
+        /* Navbar Block */
         .navbar {
             background: var(--white);
-            padding: 10px 5%;
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -32,83 +37,91 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.06);
         }
         .logo-area { display: flex; align-items: center; gap: 12px; }
-        .brand-logo-img { width: 45px; height: 45px; object-fit: cover; border-radius: 50%; border: 2px solid var(--primary); }
+        .brand-logo-box { width: 40px; height: 40px; background: var(--primary); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; border-radius: 50%; font-size: 16px; border: 2px solid var(--accent); }
         .brand-name { font-size: 20px; font-weight: 700; color: var(--primary); }
         .nav-links { display: flex; list-style: none; gap: 20px; }
         .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 14px; }
 
-        /* Hero Banner */
+        /* Modern Typography Hero */
         .hero {
-            background: linear-gradient(135px, rgba(15,23,42,0.95), rgba(37,99,235,0.85)), url('https://unsplash.com');
-            background-size: cover;
-            background-position: center;
-            min-height: 50vh;
+            background: linear-gradient(135px, #0f172a 0%, #1e3a8a 100%);
+            min-height: 55vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: var(--white);
             padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
         }
-        .hero-content h1 { font-size: 38px; font-weight: 700; margin-bottom: 10px; }
-        .hero-content p { font-size: 16px; margin-bottom: 25px; }
-        .btn-whatsapp { background: #25d366; color: var(--white); padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; box-shadow: 0 4px 15px rgba(37,211,102,0.3); }
-
-        /* General Section Settings */
-        section { padding: 60px 5%; width: 100%; display: block; }
-        .section-title { text-align: center; font-size: 26px; margin-bottom: 35px; color: var(--primary); font-weight: 700; }
-        .section-title::after { content: ''; display: block; width: 50px; height: 4px; background: var(--accent); margin: 8px auto 0; }
-
-        /* Services Grid Layout Fix */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            width: 100%;
+        .hero::before {
+            content: ''; position: absolute; width: 300px; height: 300px; background: rgba(37, 99, 235, 0.2); border-radius: 50%; top: -100px; right: -100px;
         }
-        .service-card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.04); border: 1px solid #e2e8f0; }
-        .service-img { width: 100%; height: 180px; object-fit: cover; }
-        .service-info { padding: 20px; }
-        .service-info h3 { font-size: 18px; margin-bottom: 12px; color: var(--primary); }
+        .hero-content { max-width: 750px; z-index: 2; }
+        .hero-content h1 { font-size: 40px; font-weight: 700; margin-bottom: 12px; letter-spacing: 1px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .hero-content p { font-size: 17px; margin-bottom: 25px; opacity: 0.9; font-weight: 300; }
+        .btn-whatsapp { background: #25d366; color: var(--white); padding: 12px 35px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; box-shadow: 0 4px 15px rgba(37,211,102,0.4); transition: 0.3s; }
+        .btn-whatsapp:hover { transform: translateY(-2px); }
+
+        /* Main Section Settings */
+        section { padding: 70px 5%; width: 100%; display: block; }
+        .section-title { text-align: center; font-size: 26px; margin-bottom: 40px; color: var(--primary); font-weight: 700; }
+        .section-title::after { content: ''; display: block; width: 45px; height: 4px; background: var(--accent); margin: 8px auto 0; border-radius: 2px; }
+
+        /* Premium Gradient Service Cards Fix */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 30px; width: 100%; }
+        .service-card { background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; transition: 0.3s; }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
+        
+        /* Dynamic Color Blocks instead of Images */
+        .service-visual-block { width: 100%; height: 140px; display: flex; align-items: center; justify-content: center; color: white; font-size: 38px; font-weight: 700; }
+        .sv-1 { background: var(--card-1); }
+        .sv-2 { background: var(--card-2); }
+        .sv-3 { background: var(--card-3); }
+        .sv-4 { background: var(--card-4); }
+        .sv-5 { background: var(--card-5); }
+        
+        .service-info { padding: 25px; }
+        .service-info h3 { font-size: 20px; margin-bottom: 15px; color: var(--primary); font-weight: 600; }
         .service-info ul { list-style: none; }
-        .service-info ul li { margin-bottom: 6px; font-size: 14px; color: var(--text-light); }
-        .service-info ul li::before { content: "✓ "; color: var(--accent); font-weight: bold; }
+        .service-info ul li { margin-bottom: 8px; font-size: 14px; color: var(--text-light); padding-left: 20px; position: relative; }
+        .service-info ul li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
 
-        /* Gallery Grid */
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
-        .gallery-item { border-radius: 8px; overflow: hidden; height: 180px; }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+        /* Modern Colored Gallery Grid */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .gallery-item { border-radius: 12px; height: 150px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
 
-        /* Reviews System */
-        .reviews-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .review-card { background: var(--white); padding: 20px; border-radius: 10px; box-shadow: 0 2px 15px rgba(0,0,0,0.02); border: 1px solid #edf2f7; }
-        .stars { color: #ffc107; margin-bottom: 8px; }
-        .review-text { font-style: italic; color: var(--text-light); font-size: 13px; margin-bottom: 10px; }
-        .reviewer-name { font-weight: 600; font-size: 13px; }
+        /* Reviews Module */
+        .reviews-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .review-card { background: var(--white); padding: 25px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); border: 1px solid #edf2f7; }
+        .stars { color: #ffc107; margin-bottom: 10px; font-size: 16px; }
+        .review-text { font-style: italic; color: var(--text-light); font-size: 14px; margin-bottom: 12px; }
+        .reviewer-name { font-weight: 600; font-size: 14px; color: var(--primary); }
 
-        /* Contact Layout */
+        /* Contact System Frame */
         .contact-wrapper { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .contact-box { background: var(--white); padding: 25px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
-        .info-item { margin-bottom: 20px; }
-        .info-item h4 { font-size: 14px; color: var(--primary); margin-bottom: 4px; }
-        .info-item p { color: var(--text-light); font-size: 13px; }
-        .map-box iframe { width: 100%; height: 280px; border-radius: 12px; border: none; }
+        .contact-box { background: var(--white); padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); border: 1px solid #e2e8f0; }
+        .info-item { margin-bottom: 22px; }
+        .info-item h4 { font-size: 15px; color: var(--primary); margin-bottom: 5px; font-weight: 600; }
+        .info-item p { color: var(--text-light); font-size: 14px; }
+        .map-box iframe { width: 100%; height: 280px; border-radius: 12px; border: none; box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
 
-        footer { background: var(--primary); color: var(--white); text-align: center; padding: 20px; font-size: 12px; margin-top: 4px; }
+        footer { background: var(--primary); color: var(--white); text-align: center; padding: 25px; font-size: 13px; margin-top: 20px; }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .hero-content h1 { font-size: 28px; }
-            section { padding: 40px 15px; }
+            .hero-content h1 { font-size: 30px; }
+            section { padding: 50px 20px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Header -->
+    <!-- Navigation Header Block -->
     <nav class="navbar">
         <div class="logo-area">
-            <img src="logo.png" alt="Logo" class="brand-logo-img">
+            <div class="brand-logo-box">ADE</div>
             <span class="brand-name">AD ENTERPRISES</span>
         </div>
         <ul class="nav-links">
@@ -119,7 +132,7 @@
         </ul>
     </nav>
 
-    <!-- Hero Showcase Section -->
+    <!-- Content Banner Hero -->
     <div class="hero">
         <div class="hero-content">
             <h1>AD ENTERPRISES</h1>
@@ -133,8 +146,9 @@
         <h2 class="section-title">Our Premium Services</h2>
         <div class="services-grid">
             
+            <!-- Printing Card -->
             <div class="service-card">
-                <img src="https://unsplash.com" alt="Printing Press" class="service-img">
+                <div class="service-visual-block sv-1">🖨️</div>
                 <div class="service-info">
                     <h3>Printing Press</h3>
                     <ul>
@@ -145,8 +159,9 @@
                 </div>
             </div>
 
+            <!-- Mobile Card -->
             <div class="service-card">
-                <img src="https://unsplash.com" alt="Mobile Repair" class="service-img">
+                <div class="service-visual-block sv-2">📱</div>
                 <div class="service-info">
                     <h3>Mobile Repair</h3>
                     <ul>
@@ -157,8 +172,9 @@
                 </div>
             </div>
 
+            <!-- Electronics Card -->
             <div class="service-card">
-                <img src="https://unsplash.com" alt="Electronics" class="service-img">
+                <div class="service-visual-block sv-3">🎧</div>
                 <div class="service-info">
                     <h3>Electronics</h3>
                     <ul>
@@ -169,8 +185,9 @@
                 </div>
             </div>
 
+            <!-- Parcel Card -->
             <div class="service-card">
-                <img src="https://unsplash.com" alt="Parcel" class="service-img">
+                <div class="service-visual-block sv-4">📦</div>
                 <div class="service-info">
                     <h3>Parcel Service</h3>
                     <ul>
@@ -178,27 +195,3 @@
                         <li>Delivery & Packing Support</li>
                         <li>Secure Box Packing Service</li>
                     </ul>
-                </div>
-            </div>
-
-            <div class="service-card">
-                <img src="https://unsplash.com" alt="Tourism" class="service-img">
-                <div class="service-info">
-                    <h3>Tourism Packages</h3>
-                    <ul>
-                        <li>Custom Tour Packages</li>
-                        <li>Flight & Travel Booking</li>
-                        <li>Experienced Operator Service</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Work Gallery Section -->
-    <section id="gallery" style="background-color: #ffffff;">
-        <h2 class="section-title">Our Work Gallery</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item"><img src="https://unsplash.com" alt="Work 1"></div>
-            <div class="gallery-item"><img src="https://unsplash.com" alt="Work 2"></div>
