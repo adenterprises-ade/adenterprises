@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AD ENTERPRISES - One Step All Solutions</title>
+    <!-- Premium Fonts & Clean Styling -->
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
         :root {
@@ -14,12 +15,13 @@
             --bg-light: #f8fafc;
             --white: #ffffff;
             --whatsapp-color: #25d366;
+            --gradient-accent: linear-gradient(135px, #2563eb, #1d4ed8);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: var(--bg-light); color: var(--text-dark); padding-top: 70px; }
+        body { background-color: var(--bg-light); color: var(--text-dark); padding-top: 75px; line-height: 1.6; }
         html { scroll-behavior: smooth; }
 
-        /* Navbar Layout */
+        /* Navbar Sticky Navigation */
         .navbar {
             background: var(--white);
             padding: 12px 5%;
@@ -34,12 +36,13 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.06);
         }
         .logo-area { display: flex; align-items: center; gap: 10px; }
-        .brand-logo-img { width: 45px; height: 45px; object-fit: cover; border-radius: 50%; border: 2px solid var(--primary); }
-        .brand-name { font-size: 20px; font-weight: 700; color: var(--primary); }
+        .brand-logo-img { width: 45px; height: 45px; object-fit: cover; border-radius: 50%; border: 2px solid var(--primary); background: #f0f0f0; }
+        .brand-name { font-size: 20px; font-weight: 700; color: var(--primary); letter-spacing: 0.5px; }
         .nav-links { display: flex; list-style: none; gap: 20px; }
-        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 14px; }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 14px; transition: 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
 
-        /* Banner Style */
+        /* Premium Main Splashing Banner */
         .hero {
             background: linear-gradient(135px, rgba(15,23,42,0.9), rgba(37,99,235,0.8)), url('banner.jpg');
             background-size: cover;
@@ -54,104 +57,90 @@
             padding: 40px 20px;
         }
         .hero-content { max-width: 750px; }
-        .hero-content h1 { font-size: 40px; font-weight: 700; margin-bottom: 12px; }
+        .hero-content h1 { font-size: 42px; font-weight: 700; margin-bottom: 12px; letter-spacing: 1px; }
         .hero-content p { font-size: 18px; margin-bottom: 25px; opacity: 0.9; }
 
-        /* Section Rules */
-        section { padding: 70px 5%; width: 100%; display: block; }
-        .section-title { text-align: center; font-size: 28px; margin-bottom: 10px; color: var(--primary); font-weight: 700; }
-        .section-subtitle { text-align: center; color: var(--text-light); font-size: 14px; margin-bottom: 40px; }
-        .section-title::after { content: ''; display: block; width: 50px; height: 4px; background: var(--accent); margin: 8px auto 0; border-radius: 2px; }
+        /* Core Structure Section Settings */
+        section { padding: 80px 5%; width: 100%; display: block; }
+        .section-title { text-align: center; font-size: 30px; margin-bottom: 10px; color: var(--primary); font-weight: 700; }
+        .section-subtitle { text-align: center; color: var(--text-light); font-size: 14px; margin-bottom: 45px; }
+        .section-title::after { content: ''; display: block; width: 50px; height: 4px; background: var(--accent); margin: 10px auto 0; border-radius: 2px; }
 
-        /* Services Grid Layout */
+        /* Premium Services Main Dashboard Grid */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; width: 100%; }
-        .service-card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.04); border: 1px solid #e2e8f0; cursor: pointer; transition: 0.3s; }
-        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(37,99,235,0.15); border-color: var(--accent); }
-        .service-img { width: 100%; height: 180px; object-fit: cover; background: #e2e8f0; }
-        .service-info { padding: 20px; }
-        .service-info h3 { font-size: 19px; margin-bottom: 12px; color: var(--primary); }
+        .service-card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.04); border: 1px solid #e2e8f0; text-decoration: none; color: inherit; transition: 0.3s; }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(37,99,235,0.15); border-color: var(--accent); }
+        .service-img { width: 100%; height: 190px; object-fit: cover; background: #e2e8f0; }
+        .service-info { padding: 22px; }
+        .service-info h3 { font-size: 20px; margin-bottom: 10px; color: var(--primary); font-weight: 600; }
         .click-hint { font-size: 12px; color: var(--accent); font-weight: 600; display: block; margin-top: 15px; }
 
-        /* Service Inner Detail Popups (Modals) */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(15,23,42,0.7);
-            z-index: 10000;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        .modal-content {
-            background: var(--white);
-            width: 100%; max-width: 600px;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-            position: relative;
-            animation: slideUp 0.3s ease;
-        }
-        @keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .modal-close { position: absolute; top: 15px; right: 20px; font-size: 28px; color: var(--white); cursor: pointer; font-weight: bold; z-index: 10; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
-        .modal-img { width: 100%; height: 220px; object-fit: cover; }
-        .modal-body { padding: 30px; }
-        .modal-body h3 { font-size: 24px; margin-bottom: 15px; color: var(--primary); }
-        .modal-body p { color: var(--text-light); margin-bottom: 20px; font-size: 14px; }
-        .sub-services-list { list-style: none; margin-bottom: 25px; }
-        .sub-services-list li { padding: 8px 0; border-bottom: 1px solid #f1f5f9; font-size: 14px; display: flex; align-items: center; gap: 10px; }
-        .sub-services-list li::before { content: "⚡"; color: var(--accent); }
-        .modal-btn { display: inline-block; width: 100%; text-align: center; background: var(--accent); color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 600; }
+        /* Advanced In-Depth Sub Services Display Sections */
+        .service-detail-section { background-color: var(--white); border-bottom: 1px solid #f1f5f9; }
+        .service-detail-section:nth-child(even) { background-color: var(--bg-light); }
+        .detail-wrapper { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: center; }
+        .detail-img { width: 100%; max-height: 380px; object-fit: cover; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.05); background: #e2e8f0; }
+        .detail-text h3 { font-size: 26px; color: var(--primary); margin-bottom: 15px; font-weight: 700; position: relative; }
+        .detail-text p { color: var(--text-light); margin-bottom: 20px; font-size: 15px; }
+        
+        .sub-services-list { list-style: none; margin-bottom: 30px; }
+        .sub-services-list li { padding: 10px 0; border-bottom: 1px solid #edf2f7; font-size: 14px; display: flex; align-items: flex-start; gap: 10px; color: var(--text-dark); }
+        .sub-services-list li strong { color: var(--primary); font-weight: 600; min-width: 140px; display: inline-block; }
+        .sub-services-list li::before { content: "⚡"; color: var(--accent); font-weight: bold; }
+        
+        .action-btn { display: inline-block; background: var(--gradient-accent); color: white; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; box-shadow: 0 4px 15px rgba(37,99,235,0.2); transition: 0.3s; }
+        .action-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,99,235,0.3); }
 
-        /* Booking Form */
+        /* Contact Details System Setup */
+        .contact-wrapper { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .contact-box { background: var(--white); padding: 35px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); border: 1px solid #e2e8f0; }
+        .info-item { margin-bottom: 22px; }
+        .info-item h4 { font-size: 15px; color: var(--primary); margin-bottom: 5px; font-weight: 600; }
+        .info-item p { color: var(--text-light); font-size: 14px; }
+        .info-item a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .btn-whatsapp-link { background: var(--whatsapp-color); color: var(--white); padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; margin-top: 10px; box-shadow: 0 4px 15px rgba(37,211,102,0.3); transition: 0.3s; }
+        .btn-whatsapp-link:hover { transform: translateY(-2px); }
+        .map-box iframe { width: 100%; height: 320px; border-radius: 12px; border: none; box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
+
+        /* Booking Form & Ratings Block Layout */
         .form-container { max-width: 600px; margin: 0 auto; background: var(--white); padding: 35px; border-radius: 12px; box-shadow: 0 4px 25px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; }
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; margin-bottom: 6px; font-size: 14px; font-weight: 500; color: var(--primary); }
-        .form-control { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; outline: none; }
-        .form-control:focus { border-color: var(--accent); }
-        .btn-submit { width: 100%; background: var(--accent); color: white; padding: 12px; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
-
-        /* Rating Option */
-        .rating-box { text-align: center; margin-top: 30px; padding: 20px; background: var(--bg-light); border-radius: 8px; }
-        .stars-select { display: flex; justify-content: center; gap: 8px; margin: 10px 0; font-size: 24px; cursor: pointer; color: #cbd5e1; }
+        .form-control { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; outline: none; transition: 0.3s; }
+        .form-control:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+        .btn-submit { width: 100%; background: var(--gradient-accent); color: white; padding: 13px; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 15px rgba(37,99,235,0.2); }
+        
+        .rating-box { text-align: center; margin-top: 35px; padding: 20px; background: var(--bg-light); border-radius: 10px; border: 1px dashed #cbd5e1; }
+        .stars-select { display: flex; justify-content: center; gap: 8px; margin: 10px 0; font-size: 26px; cursor: pointer; color: #cbd5e1; }
         .stars-select span:hover, .stars-select span.active { color: #ffc107; }
-
-        /* Contact Details System */
-        .contact-wrapper { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .contact-box { background: var(--white); padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); border: 1px solid #e2e8f0; }
-        .info-item { margin-bottom: 20px; }
-        .info-item h4 { font-size: 15px; color: var(--primary); margin-bottom: 4px; }
-        .info-item p { color: var(--text-light); font-size: 14px; }
-        .info-item a { color: var(--accent); text-decoration: none; font-weight: 500; }
-        .btn-whatsapp-link { background: var(--whatsapp-color); color: var(--white); padding: 10px 25px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; margin-top: 10px; box-shadow: 0 4px 12px rgba(37,211,102,0.3); }
-        .map-box iframe { width: 100%; height: 280px; border-radius: 12px; border: none; }
 
         footer { background: var(--primary); color: var(--white); text-align: center; padding: 25px; font-size: 13px; }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .hero-content h1 { font-size: 30px; }
-            section { padding: 50px 20px; }
+            .hero-content h1 { font-size: 32px; }
+            section { padding: 60px 20px; }
+            .sub-services-list li { flex-direction: column; gap: 2px; }
+            .sub-services-list li strong { min-width: auto; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Block -->
+    <!-- Header Navigation Layout -->
     <nav class="navbar">
         <div class="logo-area">
             <img src="logo.png" alt="Logo" class="brand-logo-img">
             <span class="brand-name">AD ENTERPRISES</span>
         </div>
         <ul class="nav-links">
-            <li><a href="#services">Services</a></li>
+            <li><a href="#services">Our Services</a></li>
             <li><a href="#booking">Booking Form</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact">Contact Us</a></li>
         </ul>
     </nav>
 
-    <!-- Main Banner -->
+    <!-- Hero Content Presentation Area -->
     <div class="hero">
         <div class="hero-content">
             <h1>AD ENTERPRISES</h1>
@@ -160,25 +149,14 @@
         </div>
     </div>
 
-    <!-- Core Business Services Grid -->
+    <!-- Main Services Dashboard Grid Setup -->
     <section id="services">
         <h2 class="section-title">Our Premium Services</h2>
-        <p class="section-subtitle"> </p>
+        <p class="section-subtitle"></p>
         <div class="services-grid">
             
-            <!-- Service 1 Card -->
-            <div class="service-card" onclick="openModal('modal-printing')">
+            <!-- Card 1 -->
+            <a href="#printing-press" class="service-card">
                 <img src="printing.jpg" alt="Printing Press" class="service-img">
                 <div class="service-info">
-                    <h3>Printing Press</h3>
-                    <p style="font-size:13px; color:var(--text-light);">Banner, Flex, Visiting Cards, and high-quality prints...</p>
-                    <span class="click-hint"> →</span>
-                </div>
-            </div>
-
-            <!-- Service 2 Card -->
-            <div class="service-card" onclick="openModal('modal-mobile')">
-                <img src="mobile.jpg" alt="Mobile Repair" class="service-img">
-                <div class="service-info">
-                    <h3>Mobile Repair</h3>
-                    <p style="font-size:13px; color:var(--text-light);">Hardware, software fix, and premium parts replacements...</p>
+                    <h3>Printing / Painting Press</h3>
