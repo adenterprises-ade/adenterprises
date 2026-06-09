@@ -1,29 +1,23 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AD ENTERPRISES - One Step All Solutions</title>
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="AD ENTERPRISES Jaigaon - Printing Press, Mobile Repair, Electronics, Parcel, and Tourism Services.">
-    <meta name="keywords" content="AD Enterprises, Jaigaon, Printing Press, Mobile Repair, Electronics, West Bengal">
-    
-    <!-- Google Fonts & FontAwesome Icons -->
+    <!-- Google Fonts & Font Awesome Icons -->
     <link href="https://googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="https://cloudflare.com">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com" rel="stylesheet">
     
-    <!-- Animate on Scroll CSS -->
-    <link rel="stylesheet" href="https://cloudflare.com">
-
     <style>
         :root {
-            --primary-color: #111111;
-            --secondary-color: #333333;
-            --accent-color: #25D366; /* WhatsApp Green */
-            --text-light: #ffffff;
-            --text-dark: #222222;
-            --bg-light: #f8f9fa;
-            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --primary: #0f172a;
+            --accent: #2563eb;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
         }
 
         * {
@@ -36,45 +30,41 @@
         body {
             background-color: var(--bg-light);
             color: var(--text-dark);
-            overflow-x: hidden;
-            scroll-behavior: smooth;
+            line-height: 1.6;
         }
 
-        /* Navigation Bar */
-        nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+        /* Navbar Style */
+        .navbar {
+            background: var(--white);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 5%;
         }
 
-        .logo-container {
+        .logo-area {
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
-        /* Embedded Base64 Logo Styling */
-        .brand-logo {
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
-            border-radius: 50%;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        /* SVG Logo Styling */
+        .brand-logo-svg {
+            width: 55px; /* Logo Size Chota Kiya Gaya Hai */
+            height: 55px;
+            display: block;
         }
 
-        .logo-text {
+        .brand-name {
             font-size: 22px;
             font-weight: 700;
-            color: var(--primary-color);
-            letter-spacing: 1px;
+            color: var(--primary);
+            letter-spacing: 0.5px;
         }
 
         .nav-links {
@@ -87,86 +77,83 @@
             text-decoration: none;
             color: var(--text-dark);
             font-weight: 500;
-            transition: color 0.3s;
+            transition: 0.3s;
         }
 
         .nav-links a:hover {
-            color: var(--accent-color);
+            color: var(--accent);
         }
 
-        /* Hero / Header Section */
+        /* Hero Banner Section */
         .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.6)), url('https://unsplash.com') no-repeat center center/cover;
+            background: linear-gradient(135px, rgba(15,23,42,0.95), rgba(37,99,235,0.85)), url('https://unsplash.com');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             text-align: center;
-            color: var(--text-light);
+            color: var(--white);
             padding: 0 20px;
-            margin-top: 0;
+            margin-top: 70px;
         }
 
-        .hero h1 {
-            font-size: 56px;
+        .hero-content h1 {
+            font-size: 48px;
             font-weight: 700;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
+            margin-bottom: 15px;
         }
 
-        .hero p {
+        .hero-content p {
             font-size: 20px;
             margin-bottom: 30px;
-            font-weight: 300;
+            opacity: 0.9;
         }
 
-        .btn-cta {
-            background: var(--accent-color);
-            color: var(--text-light);
-            padding: 15px 35px;
+        .btn-whatsapp {
+            background: #25d366;
+            color: white;
+            padding: 12px 30px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 18px;
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
-            transition: transform 0.3s, box-shadow 0.3s;
             display: inline-flex;
             align-items: center;
             gap: 10px;
+            box-shadow: 0 4px 15px rgba(37,211,102,0.3);
+            transition: 0.3s;
         }
 
-        .btn-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+        .btn-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37,211,102,0.4);
         }
 
-        /* Sections General Setup */
+        /* Section Global Settings */
         section {
-            padding: 100px 5% 60px 5%;
+            padding: 80px 8%;
         }
 
         .section-title {
             text-align: center;
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 50px;
+            font-size: 32px;
+            margin-bottom: 40px;
             position: relative;
+            color: var(--primary);
         }
 
         .section-title::after {
             content: '';
+            display: block;
             width: 60px;
             height: 4px;
-            background: var(--primary-color);
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
+            background: var(--accent);
+            margin: 10px auto 0;
             border-radius: 2px;
         }
 
-        /* Services Grid Layout */
+        /* Services Cards Grid */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -174,16 +161,16 @@
         }
 
         .service-card {
-            background: #ffffff;
-            border-radius: 15px;
+            background: var(--white);
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: 0.3s;
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
 
         .service-img {
@@ -192,98 +179,91 @@
             object-fit: cover;
         }
 
-        .service-content {
+        .service-info {
             padding: 25px;
         }
 
-        .service-icon {
-            font-size: 24px;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-
-        .service-content h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .service-content ul {
-            list-style: none;
-        }
-
-        .service-content ul li {
-            margin-bottom: 8px;
-            color: #555;
+        .service-info h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: var(--primary);
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 15px;
         }
 
-        .service-content ul li i {
-            color: var(--accent-color);
-            font-size: 12px;
+        .service-info ul {
+            list-style: none;
+            color: var(--text-light);
+        }
+
+        .service-info ul li {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .service-info ul li::before {
+            content: "✓ ";
+            color: var(--accent);
+            font-weight: bold;
         }
 
         /* Gallery Grid */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 20px;
         }
 
         .gallery-item {
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: var(--shadow);
             height: 220px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s;
+            transition: 0.5s;
         }
 
         .gallery-item:hover img {
-            transform: scale(1.1);
+            transform: scale(1.08);
         }
 
-        /* Reviews Carousel System */
+        /* Reviews Section */
         .reviews-container {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
-            justify-content: center;
         }
 
         .review-card {
-            background: #fff;
+            background: var(--white);
             padding: 30px;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            max-width: 350px;
-            flex: 1 1 300px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+            border: 1px solid #edf2f7;
         }
 
         .stars {
             color: #ffc107;
-            margin-bottom: 15px;
-            font-size: 18px;
+            margin-bottom: 10px;
         }
 
         .review-text {
             font-style: italic;
-            color: #555;
+            color: var(--text-light);
+            font-size: 14px;
             margin-bottom: 15px;
-            font-size: 15px;
         }
 
         .reviewer-name {
             font-weight: 600;
-            font-size: 16px;
+            font-size: 15px;
+            color: var(--primary);
         }
 
         /* Contact & Map Layout */
@@ -291,88 +271,73 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 40px;
-            background: #fff;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
         }
 
-        .contact-info h3 {
-            font-size: 24px;
-            margin-bottom: 25px;
+        .contact-box {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
         }
 
         .info-item {
             display: flex;
             align-items: flex-start;
             gap: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .info-item i {
             font-size: 20px;
-            color: var(--primary-color);
-            margin-top: 4px;
+            color: var(--accent);
+            margin-top: 5px;
         }
 
         .info-item p {
-            color: #444;
-            font-size: 16px;
-        }
-
-        .contact-form form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .contact-form input, .contact-form textarea {
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+            color: var(--text-light);
             font-size: 15px;
-            outline: none;
-            transition: border-color 0.3s;
         }
 
-        .contact-form input:focus, .contact-form textarea:focus {
-            border-color: var(--primary-color);
-        }
-
-        .btn-submit {
-            background: var(--primary-color);
-            color: #fff;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 16px;
-            transition: background 0.3s;
-        }
-
-        .btn-submit:hover {
-            background: #333;
-        }
-
-        .map-container {
-            grid-column: 1 / -1;
-            border-radius: 15px;
-            overflow: hidden;
-            height: 300px;
-            box-shadow: var(--shadow);
-        }
-
-        .map-container iframe {
+        .map-box iframe {
             width: 100%;
             height: 100%;
+            min-height: 350px;
+            border-radius: 12px;
             border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
         }
 
-        /* Floating WhatsApp Button */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: var(--accent-color);
-            color: #fff;
+        /* Footer Section */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 30px;
+            font-size: 14px;
+        }
+
+        /* Responsive Design Rules */
+        @media (max-width: 768px) {
+            .navbar { padding: 15px 20px; }
+            .nav-links { display: none; } /* Mobile me links clean display ke liye hide */
+            .hero-content h1 { font-size: 32px; }
+            .hero-content p { font-size: 16px; }
+            section { padding: 60px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar Section -->
+    <nav class="navbar">
+        <div class="logo-area">
+            <!-- SVG Embedded Vector Logo Graphic -->
+            <svg class="brand-logo-svg" viewBox="0 0 500 500" xmlns="http://w3.org">
+                <circle cx="250" cy="250" r="230" fill="#000000"/>
+                <path d="M 120 250 C 120 180, 140 160, 200 160 C 230 160, 245 175, 245 200 C 245 220, 230 235, 190 240 C 150 245, 120 248, 120 250 Z" fill="none" stroke="#ffffff" stroke-width="4"/>
+                <circle cx="250" cy="250" r="170" fill="#ffffff"/>
+                <circle cx="250" cy="250" r="150" fill="#ffffff" stroke="#000000" stroke-width="8"/>
+                <text x="250" y="90" font-family="'Times New Roman', serif" font-size="52" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="3">ENTERPRISES</text>
+                <text x="120" y="300" font-family="'Times New Roman', serif" font-size="65" font-weight="bold" fill="#ffffff" text-anchor="middle" transform="rotate(-65, 120, 300)">AD</text>
+                <text x="250" y="260" font-family="'Georgia', serif" font-size="110" font-weight="bold" fill="#000000" text-anchor="middle">ADE</text>
+                <text x="250" y="390" font-family="'Brush Script MT', cursive, sans-serif" font-size="34" font-weight="bold" fill="#ffffff" text-anchor="middle">One Step</text>
