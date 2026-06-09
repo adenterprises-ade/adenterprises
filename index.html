@@ -3,116 +3,91 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AD Enterprises</title>
+<title>AD ENTERPRISES</title>
 
 <style>
-body{
-margin:0;
-font-family:Arial;
-background:#f5f5f5;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
 }
 
 /* HEADER */
-header{
-background:#111;
-color:white;
-padding:15px;
-display:flex;
-align-items:center;
-justify-content:space-between;
+header {
+  background: url('images/header.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
 }
 
-header img{
-height:50px;
-border-radius:5px;
+header h1 {
+  font-size: 40px;
+  background: rgba(0,0,0,0.5);
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 10px;
 }
 
-.hero{
-background:url('https://images.unsplash.com/photo-1581091870622-1e7f0c3b5c4a') center/cover;
-height:250px;
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
-font-size:30px;
-font-weight:bold;
+/* SECTION */
+.section {
+  padding: 20px;
+  text-align: center;
 }
 
-/* SERVICES */
-.container{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:15px;
-padding:20px;
+.section h2 {
+  margin-bottom: 15px;
 }
 
-.card{
-background:white;
-padding:15px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-cursor:pointer;
-transition:0.3s;
+/* CARDS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  padding: 10px;
 }
 
-.card:hover{
-transform:scale(1.03);
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.card img{
-width:100%;
-height:150px;
-object-fit:cover;
-border-radius:10px;
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
 }
 
-/* BUTTONS */
-.btn{
-background:#111;
-color:white;
-padding:10px;
-display:inline-block;
-margin-top:10px;
-border-radius:5px;
-text-decoration:none;
+.card h3 {
+  margin: 10px 0;
 }
 
-/* POPUP */
-.modal{
-display:none;
-position:fixed;
-top:0;left:0;
-width:100%;height:100%;
-background:rgba(0,0,0,0.6);
-justify-content:center;
-align-items:center;
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 8px 12px;
+  background: green;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
 }
 
-.modal-content{
-background:white;
-padding:20px;
-width:300px;
-border-radius:10px;
+/* GALLERY */
+.gallery img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
-.close{
-float:right;
-cursor:pointer;
-font-size:20px;
-}
-
-/* FORMS */
-form{
-background:white;
-padding:20px;
-margin:20px;
-border-radius:10px;
-}
-
-input,textarea{
-width:100%;
-padding:10px;
-margin:5px 0;
+/* REVIEWS */
+.review {
+  background: white;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 </style>
 </head>
@@ -120,87 +95,78 @@ margin:5px 0;
 <body>
 
 <header>
-<img src="images/logo.png" alt="logo">
-<h3>AD ENTERPRISES</h3>
+  <h1>AD ENTERPRISES</h1>
 </header>
 
-<div class="hero">
-ONE STOP SOLUTIONS
-</div>
-
 <!-- SERVICES -->
-<div class="container">
+<div class="section">
+<h2>Our Services</h2>
 
-<div class="card" onclick="openModal('Printing Press','Banner, Flex, Visiting Card, Poster Printing')">
-<img src="https://images.unsplash.com/photo-1583947215259-38e31be8751f">
-<h3>Printing Press</h3>
-</div>
+<div class="grid">
 
-<div class="card" onclick="openModal('Mobile & Computer Repair','All mobile, laptop & PC repair services')">
-<img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04">
-<h3>Repair Service</h3>
-</div>
+  <!-- PRINTING / PAINTING -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600" alt="Printing Press">
+    <h3>Printing Press</h3>
+    <a class="btn" href="#">Inquiry</a>
+  </div>
 
-<div class="card" onclick="openModal('Electronics','TV, Fan, Home Appliances Repair & Sales')">
-<img src="https://images.unsplash.com/photo-1518770660439-4636190af475">
-<h3>Electronics</h3>
-</div>
+  <!-- MOBILE (3rd image style) -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600" alt="Mobile">
+    <h3>Mobile Repair</h3>
+    <a class="btn" href="#">Inquiry</a>
+  </div>
 
-<div class="card" onclick="openModal('Gadgets','Latest mobile & gadgets available')">
-<img src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5">
-<h3>Gadgets</h3>
-</div>
+  <!-- ELECTRONICS (HEADPHONE) -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1518441902117-f0a4a3a8c6a3?w=600" alt="Headphones">
+    <h3>Electronics</h3>
+    <a class="btn" href="#">Inquiry</a>
+  </div>
 
-<div class="card" onclick="openModal('Parcel Service','Online parcel receive & delivery support')">
-<img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d">
-<h3>Parcel Service</h3>
-</div>
+  <!-- PARCEL -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600" alt="Parcel Box">
+    <h3>Parcel Service</h3>
+    <a class="btn" href="#">Inquiry</a>
+  </div>
 
-<div class="card" onclick="openModal('Tourism','Tour packages & travel booking')">
-<img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b">
-<h3>Tourism</h3>
-</div>
-
-</div>
-
-<!-- INQUIRY FORM -->
-<form>
-<h3>Inquiry Form</h3>
-<input type="text" placeholder="Your Name">
-<input type="text" placeholder="Mobile Number">
-<textarea placeholder="Your Message"></textarea>
-<button class="btn">Submit</button>
-</form>
-
-<!-- BOOKING FORM -->
-<form>
-<h3>Booking Form</h3>
-<input type="text" placeholder="Service Name">
-<input type="date">
-<textarea placeholder="Details"></textarea>
-<button class="btn">Book Now</button>
-</form>
-
-<!-- POPUP -->
-<div class="modal" id="modal">
-<div class="modal-content">
-<span class="close" onclick="closeModal()">X</span>
-<h3 id="title"></h3>
-<p id="desc"></p>
 </div>
 </div>
 
-<script>
-function openModal(title,desc){
-document.getElementById('modal').style.display="flex";
-document.getElementById('title').innerText=title;
-document.getElementById('desc').innerText=desc;
-}
+<!-- GALLERY -->
+<div class="section">
+<h2>Gallery</h2>
+<div class="grid gallery">
 
-function closeModal(){
-document.getElementById('modal').style.display="none";
-}
-</script>
+  <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600">
+  <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600">
+  <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600">
+
+</div>
+</div>
+
+<!-- REVIEWS -->
+<div class="section">
+<h2>Customer Reviews</h2>
+
+<div class="review">
+⭐⭐⭐⭐⭐ <br>
+Good service and fast delivery!
+</div>
+
+<div class="review">
+⭐⭐⭐⭐⭐ <br>
+Very nice printing quality.
+</div>
+
+<div class="review">
+⭐⭐⭐⭐ <br>
+Affordable and trusted shop.
+</div>
+
+</div>
 
 </body>
 </html>
