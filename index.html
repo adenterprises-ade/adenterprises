@@ -3,153 +3,370 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AD ENTERPRISES | Multi-Service Hub Jaigaon</title>
-    <meta name="description" content="AD ENTERPRISES in Jaigaon, West Bengal offers professional Printing, Mobile Repairing, Electronics, Parcel Services, and Tour Packages. Contact us today!">
+    <title>AD ENTERPRISES - One Step All Solutions</title>
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="AD ENTERPRISES in Jaigaon, West Bengal offers Printing Press, Mobile Repairing, Electronics, Parcel Services, and Tour Packages.">
+    <meta name="keywords" content="AD Enterprises, Printing Jaigaon, Mobile Repair, Electronics, Parcel Service, Jaigaon Tourism">
     
-    <!-- Tailwind CSS for modern layout -->
-    <script src="https://jsdelivr.net"></script>
-    <!-- FontAwesome for Premium Icons -->
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="https://cloudflare.com">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com" rel="stylesheet">
 
     <style>
-        body {
+        /* Base Styles & Theme Colors */
+        :root {
+            --primary-color: #0f2027; /* Deep Premium Slate/Blue */
+            --secondary-color: #203a43;
+            --accent-color: #d4af37; /* Premium Gold */
+            --text-light: #ffffff;
+            --text-dark: #333333;
+            --bg-light: #f8f9fa;
+            --shadow-hover: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
+        }
+
+        html {
             scroll-behavior: smooth;
         }
-        /* Premium Soft Animations */
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            overflow-x: hidden;
         }
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background: #ffffff;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* SVG Reconstruction of your provided logo image */
+        .logo-svg {
+            width: 60px;
+            height: 60px;
+        }
+
+        .brand-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Banner Section */
+        .hero {
+            height: 85vh;
+            background: linear-gradient(rgba(15, 32, 39, 0.85), rgba(32, 58, 67, 0.85)), 
+                        url('https://unsplash.com') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--text-light);
+            padding: 0 20px;
+            margin-top: 80px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 22px;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .cta-btn {
+            background-color: #25d366;
+            color: white;
+            padding: 14px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: transform 0.3s, background-color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            background-color: #20ba5a;
+        }
+
+        /* Section Container Layout */
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin: 60px 0 40px 0;
+            position: relative;
+            color: var(--primary-color);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Services Responsive Grid Layout */
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 0 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: #ffffff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
         .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
         }
-    </style>
-</head>
-<body class="bg-gray-50 text-gray-800 antialiased">
 
-    <!-- TOP CONTACT BAR -->
-    <div class="bg-blue-900 text-white text-xs sm:text-sm py-2 px-4 sticky top-0 z-50 shadow-md">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="tel:+917063680087" class="hover:text-blue-300 transition"><i class="fas fa-phone mr-1"></i> +91-7063680087</a>
-                <a href="tel:+97517343887" class="hover:text-blue-300 transition"><i class="fas fa-phone mr-1"></i> +975-17343887</a>
-                <a href="mailto:adenterprises206@gmail.com" class="hover:text-blue-300 transition"><i class="fas fa-envelope mr-1"></i> adenterprises206@gmail.com</a>
-            </div>
-            <div class="flex items-center gap-2">
-                <i class="fas fa-map-marker-alt text-red-400"></i>
-                <span>Jaigaon, West Bengal, 736182</span>
-            </div>
-        </div>
-    </div>
+        .service-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
 
-    <!-- HEADER / NAVIGATION -->
-    <header class="bg-white py-4 px-6 shadow-sm border-b border-gray-100">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <!-- Brand Logo Frame -->
-            <div class="flex items-center gap-3">
-                <div class="bg-blue-600 text-white p-2.5 rounded-xl shadow-md font-bold text-xl tracking-wider">
-                    AD
-                </div>
-                <div>
-                    <h1 class="font-bold text-xl sm:text-2xl text-gray-900 tracking-tight">AD ENTERPRISES</h1>
-                    <p class="text-xs text-blue-600 font-medium tracking-widest uppercase">Multi Services Hub</p>
-                </div>
-            </div>
-            <!-- Quick WhatsApp Action Nav -->
-            <a href="https://wa.me." target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-sm transition flex items-center gap-2">
-                <i class="fab fa-whatsapp text-lg"></i>
-                <span class="hidden md:inline">Chat With Us</span>
-            </a>
-        </div>
-    </header>
+        .service-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
 
-    <!-- HERO BANNER SECTION -->
-    <section class="relative bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 text-white py-20 px-6 overflow-hidden">
-        <!-- Abstract Tech Background Overlay -->
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
-        
-        <div class="max-w-5xl mx-auto text-center relative z-10 fade-in-up">
-            <span class="bg-blue-500/20 text-blue-300 text-xs font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full border border-blue-400/30">Your Trusted Partner in Jaigaon</span>
-            <h2 class="text-3xl sm:text-5xl font-extrabold mt-4 mb-6 leading-tight tracking-tight">
-                All Your Business & Personal <br class="hidden sm:inline"> Needs In One Premium Place
-            </h2>
-            <p class="text-lg text-blue-100 max-w-2xl mx-auto mb-8 font-light">
-                From high-end printing press setup and mobile repairs to modern electronics, secure parcel handling, and beautiful tour planning.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a href="#services" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-3.5 rounded-xl transition shadow-lg shadow-blue-900/50 text-center">
-                    Explore Our Services
-                </a>
-                <a href="#contact" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-3.5 rounded-xl border border-white/20 transition text-center backdrop-blur-sm">
-                    Contact Office
-                </a>
-            </div>
-        </div>
-    </section>
+        .service-icon {
+            font-size: 28px;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
 
-    <!-- SERVICES SECTION -->
-    <section id="services" class="py-20 px-6 max-w-7xl mx-auto">
-        <div class="text-center mb-14">
-            <h2 class="text-2xl sm:text-4xl font-bold text-gray-900">Our Premium Services</h2>
-            <div class="h-1 w-20 bg-blue-600 mx-auto mt-3 rounded-full"></div>
-            <p class="text-gray-500 mt-4 max-w-lg mx-auto">We provide fast, reliable, and high-quality solutions designed around your exact daily operational needs.</p>
-        </div>
+        .service-content h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            <!-- Service 1: Printing Press -->
-            <div class="service-card bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden transition-all duration-300 flex flex-col">
-                <div class="h-48 bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center p-6 text-white relative">
-                    <i class="fas fa-print text-6xl opacity-20 absolute right-4 bottom-2"></i>
-                    <div class="text-center">
-                        <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mx-auto mb-3 backdrop-blur-sm">
-                            <i class="fas fa-print text-2xl text-white"></i>
-                        </div>
-                        <h3 class="font-bold text-xl">Printing / Painting Press</h3>
-                    </div>
-                </div>
-                <div class="p-6 flex-grow flex flex-col justify-between">
-                    <ul class="space-y-2.5 text-gray-600 text-sm mb-6">
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i> High-Quality Banner Printing</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i> Premium Durable Flex Printing</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i> Professional Visiting Cards</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i> Custom Posters & Marketing Flyers</li>
-                    </ul>
-                    <a href="https://wa.me." target="_blank" class="w-full bg-gray-50 hover:bg-blue-50 text-blue-600 border border-gray-200 hover:border-blue-300 font-semibold py-2.5 rounded-xl transition text-center text-sm flex items-center justify-center gap-2">
-                        <i class="fab fa-whatsapp text-base"></i> Inquiry Now
-                    </a>
-                </div>
-            </div>
+        .service-content ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
 
-            <!-- Service 2: Mobile Repair -->
-            <div class="service-card bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden transition-all duration-300 flex flex-col">
-                <div class="h-48 bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center p-6 text-white relative">
-                    <i class="fas fa-mobile-alt text-6xl opacity-20 absolute right-4 bottom-2"></i>
-                    <div class="text-center">
-                        <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mx-auto mb-3 backdrop-blur-sm">
-                            <i class="fas fa-tools text-2xl text-white"></i>
-                        </div>
-                        <h3 class="font-bold text-xl">Mobile Repair</h3>
-                    </div>
-                </div>
-                <div class="p-6 flex-grow flex flex-col justify-between">
-                    <ul class="space-y-2.5 text-gray-600 text-sm mb-6">
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i> Expert Mobile Repairing Specialist</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i> Fast Software & Hardware Fixes</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i> Genuine Mobile Parts Replacement</li>
-                    </ul>
+        .service-content ul li {
+            margin-bottom: 8px;
+            font-size: 15px;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-content ul li i {
+            color: #25d366;
+            font-size: 12px;
+        }
+
+        .card-inquiry-btn {
+            margin-top: auto;
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .card-inquiry-btn:hover {
+            background: var(--accent-color);
+            color: var(--primary-color);
+        }
+
+        /* Gallery Grid Section */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 15px;
+            padding: 0 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 220px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Reviews System Layout */
+        .reviews-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 0 5%;
+            max-width: 1200px;
+            margin: 0 auto 60px auto;
+        }
+
+        .review-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .stars {
+            color: #ffca28;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .review-text {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Form & Contact Page Split Grid */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            padding: 0 5%;
+            max-width: 1200px;
+            margin: 0 auto 60px auto;
+        }
+
+        .contact-info {
+            background: var(--primary-color);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+        }
+
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 25px;
+            color: var(--accent-color);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .info-item i {
+            font-size: 20px;
+            color: var(--accent-color);
+            margin-top: 4px;
+        }
+
+        .info-item p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .contact-form {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
