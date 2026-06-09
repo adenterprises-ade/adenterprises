@@ -29,7 +29,7 @@
             background-color: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.6;
-            padding-top: 80px; /* Isse content navbar ke peeche nahi chupegaon */
+            padding-top: 80px;
         }
 
         /* Fixed Navigation Header */
@@ -53,11 +53,12 @@
             gap: 12px;
         }
 
-        /* Micro SVG Logo Box */
-        .brand-logo-svg {
+        /* Fixed Image Logo Box */
+        .brand-logo-img {
             width: 50px; 
             height: 50px;
-            display: block;
+            object-fit: contain;
+            border-radius: 50%;
         }
 
         .brand-name {
@@ -89,7 +90,7 @@
             background: linear-gradient(135px, rgba(15,23,42,0.95), rgba(37,99,235,0.85)), url('https://unsplash.com');
             background-size: cover;
             background-position: center;
-            min-height: 70vh;
+            min-height: 60vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -131,7 +132,7 @@
         /* Content Sections Setup */
         section {
             padding: 70px 5%;
-            display: block; /* Force visibility rendering */
+            display: block;
             clear: both;
         }
 
@@ -317,19 +318,8 @@
     <!-- Header Block Navigation -->
     <nav class="navbar">
         <div class="logo-area">
-            <!-- Precise Vector Brand Logo Alignment -->
-            <svg class="brand-logo-svg" viewBox="0 0 500 500" xmlns="http://w3.org">
-                <circle cx="250" cy="250" r="230" fill="#000000"/>
-                <circle cx="250" cy="250" r="170" fill="#ffffff"/>
-                <circle cx="250" cy="250" r="150" fill="#ffffff" stroke="#000000" stroke-width="8"/>
-                <text x="250" y="90" font-family="'Times New Roman', serif" font-size="52" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="3">ENTERPRISES</text>
-                <text x="120" y="300" font-family="'Times New Roman', serif" font-size="65" font-weight="bold" fill="#ffffff" text-anchor="middle" transform="rotate(-65, 120, 300)">AD</text>
-                <text x="250" y="260" font-family="'Georgia', serif" font-size="110" font-weight="bold" fill="#000000" text-anchor="middle">ADE</text>
-                <text x="250" y="390" font-family="'Brush Script MT', cursive" font-size="34" font-weight="bold" fill="#ffffff" text-anchor="middle">One Step</text>
-                <text x="250" y="425" font-family="'Brush Script MT', cursive" font-size="34" font-weight="bold" fill="#ffffff" text-anchor="middle">All Solutions</text>
-                <circle cx="65" cy="250" r="10" fill="#ffffff"/>
-                <circle cx="435" cy="250" r="10" fill="#ffffff"/>
-            </svg>
+            <!-- Fixed Placeholder Logo Image -->
+            <img src="https://unsplash.com" alt="Logo" class="brand-logo-img">
             <span class="brand-name">AD ENTERPRISES</span>
         </div>
         <ul class="nav-links">
@@ -344,3 +334,28 @@
     <div class="hero">
         <div class="hero-content">
             <h1>AD ENTERPRISES</h1>
+            <p>One Step All Solutions — Printing, Mobile Repairing, Electronics & Tour Packages</p>
+            <a href="https://wa.me." class="btn-whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i> Inquiry Now
+            </a>
+        </div>
+    </div>
+
+    <!-- Core Business Services Section -->
+    <section id="services">
+        <h2 class="section-title">Our Premium Services</h2>
+        <div class="services-grid">
+            
+            <div class="service-card">
+                <img src="https://unsplash.com" alt="Printing" class="service-img">
+                <div class="service-info">
+                    <h3><i class="fa-solid fa-print"></i> Printing Press</h3>
+                    <ul>
+                        <li>Banner & Flex Printing</li>
+                        <li>Professional Visiting Cards</li>
+                        <li>Creative Posters & Flyers</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
